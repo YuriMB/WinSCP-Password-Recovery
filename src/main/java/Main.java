@@ -128,7 +128,7 @@ public class Main {
             char result = unsignedChar(
                         ~(
                             (
-                                    ((str.get(0) << 4) & 0xFF) + str.get(1)
+                                    unsignedChar(str.get(0) << 4) + str.get(1) // Remove bitshift overflow bits.
                             ) ^ PWALG_SIMPLE_MAGIC
                         )
                     );
